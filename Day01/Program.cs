@@ -26,24 +26,34 @@ namespace AoC2021
                 }
                 entry = i;
             }
-            Console.WriteLine("solution = " + count);
+            Console.WriteLine("solution 1 = " + count);
         }
 
         static void Part2()
         {
             string _input = File.ReadAllText("input.txt");
             List<int> entries = _input.Split('\n').Select(int.Parse).ToList();
-            int entry = -1;
+            int runningSum = -1;
+            int nextSum = -1;
             int count = 0;
+            var addCount = 0;
             foreach (int i in entries)
             {
-                if (entry != -1 && i > entry)
+                if(addCount < 3)
                 {
-                    count++;
+                    runningSum += i;
+                    addCount++;
+                    continue;
                 }
-                entry = i;
+                nextSum += i;
+                nextSum -= entries[addCount - 1];
+                if(nextSum > runningSum)
+                    count++;
+                nextSum = runningSum;
+                addCount++;
+                runningSum = nextSum;
             }
-            Console.WriteLine("solution = " + count);
+            Console.WriteLine("solution 2 = " + count);
         }
     }
 }
