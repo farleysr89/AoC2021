@@ -33,8 +33,8 @@ namespace AoC2021
         {
             string _input = File.ReadAllText("input.txt");
             List<int> entries = _input.Split('\n').Select(int.Parse).ToList();
-            int runningSum = -1;
-            int nextSum = -1;
+            int runningSum = 0;
+            int nextSum = 0;
             int count = 0;
             var addCount = 0;
             foreach (int i in entries)
@@ -43,10 +43,11 @@ namespace AoC2021
                 {
                     runningSum += i;
                     addCount++;
+                    nextSum = runningSum;
                     continue;
                 }
                 nextSum += i;
-                nextSum -= entries[addCount - 1];
+                nextSum -= entries[addCount - 3];
                 if(nextSum > runningSum)
                     count++;
                 nextSum = runningSum;
