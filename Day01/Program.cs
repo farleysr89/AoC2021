@@ -14,11 +14,11 @@ namespace AoC2021
         }
         static void Part1()
         {
-            string _input = File.ReadAllText("input.txt");
-            List<int> entries = _input.Split('\n').Select(int.Parse).ToList();
+            string input = File.ReadAllText("input.txt");
+            List<int> entries = input.Split('\n').Select(int.Parse).ToList();
             int entry = -1;
             int count = 0;
-            foreach (int i in entries)
+            foreach (var i in entries)
             {
                 if(entry != -1 && i > entry)
                 {
@@ -31,13 +31,13 @@ namespace AoC2021
 
         static void Part2()
         {
-            string _input = File.ReadAllText("input.txt");
-            List<int> entries = _input.Split('\n').Select(int.Parse).ToList();
-            int runningSum = 0;
-            int nextSum = 0;
-            int count = 0;
+            string input = File.ReadAllText("input.txt");
+            List<int> entries = input.Split('\n').Select(int.Parse).ToList();
+            var runningSum = 0;
+            var nextSum = 0;
+            var count = 0;
             var addCount = 0;
-            foreach (int i in entries)
+            foreach (var i in entries)
             {
                 if(addCount < 3)
                 {
