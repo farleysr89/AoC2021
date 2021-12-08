@@ -24,7 +24,7 @@
             //        "00010\n" +
             //        "01010";
             var entries = input.Split('\n',StringSplitOptions.RemoveEmptyEntries).ToList();
-            var length = entries[0].ToString().Length;
+            var length = entries[0].ToString().Length - 1;
             var gammaOutput = "";
             var epsilonOutput = "";
             for(var i = 0; i < length; i++)
@@ -37,7 +37,7 @@
                     else oneCount++;
                 }
                 gammaOutput += zeroCount > oneCount ? "0" : "1";
-                epsilonOutput += zeroCount > oneCount ? "1" : "0";
+                epsilonOutput += zeroCount <= oneCount ? "0" : "1";
             }
             var gamma = Convert.ToInt64(gammaOutput, 2);
             var epsilon = Convert.ToInt64(epsilonOutput, 2);
