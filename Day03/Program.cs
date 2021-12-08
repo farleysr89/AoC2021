@@ -1,8 +1,4 @@
-﻿﻿using System;
-using System.IO;
-using System.Linq;
-
-namespace AoC2021
+﻿namespace AoC2021
 {
     class Program
     {
@@ -15,6 +11,18 @@ namespace AoC2021
         static void Part1()
         {
             string input = File.ReadAllText("input.txt");
+            //input = "00100\n" +
+            //        "11110\n" +
+            //        "10110\n" +
+            //        "10111\n" +
+            //        "10101\n" +
+            //        "01111\n" +
+            //        "00111\n" +
+            //        "11100\n" +
+            //        "10000\n" +
+            //        "11001\n" +
+            //        "00010\n" +
+            //        "01010";
             var entries = input.Split('\n',StringSplitOptions.RemoveEmptyEntries).ToList();
             var length = entries[0].ToString().Length;
             var gammaOutput = "";
@@ -31,7 +39,9 @@ namespace AoC2021
                 gammaOutput += zeroCount > oneCount ? "0" : "1";
                 epsilonOutput += zeroCount > oneCount ? "1" : "0";
             }
-            Console.WriteLine(Convert.ToInt32(gammaOutput,2) * Convert.ToInt32(epsilonOutput, 2));
+            var gamma = Convert.ToInt64(gammaOutput, 2);
+            var epsilon = Convert.ToInt64(epsilonOutput, 2);
+            Console.WriteLine("Solution 1 = " + gamma * epsilon);
         }
     }
     
