@@ -1,4 +1,4 @@
-﻿--- [Day 4: Giant Squi](https://adventofcode.com/2021/day/4) ---
+﻿--- [Day 4: Giant Squid](https://adventofcode.com/2021/day/4) ---
 ============================
 --- Part One ---
 ----------------
