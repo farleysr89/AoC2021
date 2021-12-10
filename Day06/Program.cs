@@ -38,8 +38,7 @@
         {
             var input = File.ReadAllText("input.txt");
             var entries = input.Split('\n', StringSplitOptions.RemoveEmptyEntries).ToList();
-            var fish = entries[0].Split(",").Select(i => Convert.ToInt32(i)
-            ).ToList();
+            var fish = entries[0].Split(",").Select(i => Convert.ToInt32(i)).ToList();
             var totals = new Dictionary<int, long>();
             foreach(var f in fish)
             {
