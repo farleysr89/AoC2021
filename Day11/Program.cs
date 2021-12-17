@@ -109,7 +109,6 @@
         {
             var input = File.ReadAllText("input.txt");
             var lines = input.Split("\n", StringSplitOptions.RemoveEmptyEntries).ToList();
-            var flashes = 0;
             var y = 0;
             var octopi = new List<Octopus>();
             foreach (var line in lines)
@@ -147,7 +146,6 @@
                     foreach (var o in octopi.Where(o => o.value > 9))
                     {
                         o.value = 0;
-                        flashes++;
                         o.flashed = true;
                         flashed = true;
                         if(o.x > 0 && o.y > 0)
@@ -200,8 +198,6 @@
                             }
                     }
                 }
-
-                var debug = true;
             }
             Console.WriteLine("Solution 2 is " + turnCount);
         }
