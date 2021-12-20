@@ -38,10 +38,6 @@
         static int CountPaths2(List<Path> paths, Path path, List<string> visited, bool visitedTwice)
         {
             var position = path.ends[1].name;
-            if (position == "d")
-            {
-                var debug = true;
-            }
             visited.Add(position);
             return path.ends[1].end ? 1 : 
                 paths.Where(pp => !pp.ends[1].start && 
