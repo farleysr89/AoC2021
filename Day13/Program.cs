@@ -74,7 +74,7 @@
                     point.y = newY;
                 }
             }
-            Console.WriteLine("Solution 1 is = " + points.Count(p => !p.duplicate));
+            Console.WriteLine("Solution 1 is " + points.Count(p => !p.duplicate));
         }
 
         static void Part2()

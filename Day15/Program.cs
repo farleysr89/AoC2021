@@ -46,7 +46,7 @@
 
             }
 
-            Console.WriteLine("Solution 1 is = " + nodes.Last().distance);
+            Console.WriteLine("Solution 1 is " + nodes.Last().distance);
         }
 
         static void Part2()
@@ -145,7 +145,7 @@
 
             }
 
-            Console.WriteLine("Solution 2 is = " + nodes[(maxX - 1,maxY - 1)].distance);
+            Console.WriteLine("Solution 2 is " + nodes[(maxX - 1,maxY - 1)].distance);
         }
     }
 
