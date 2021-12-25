@@ -125,3 +125,4 @@ For example:
 
 What do you get if you evaluate the expression represented by your hexadecimal-encoded BITS transmission?
 
+Your puzzle answer was 1922490999789.
