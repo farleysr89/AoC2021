@@ -23,7 +23,6 @@
         static (long, int) ProcessPacket(string binary, int index, long size = -1)
         {
             var end = false;
-            var init = index;
             long sum = 0;
             var version = long.Parse(Convert.ToString(Convert.ToInt64(binary.Substring(index, 3), 2), 10));
             sum += version;
